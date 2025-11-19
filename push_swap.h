@@ -19,7 +19,7 @@ void    sort_final_rotation(t_stack **stack_a);
 void    sort_large(t_stack **stack_a, t_stack **stack_b);
 void    sort_three(t_stack **stack_a);
 int     is_sorted(t_stack *stack);
-void    sort_small(t_stack **stack_a, t_stack **stack_b);
+void    sort_small(t_stack **stack_a, t_stack **stack_b, int size);
 void    assign_indices(t_stack *stack_a);
 
 
@@ -50,5 +50,18 @@ void    ft_reverse_rotate(t_stack **stack);
 long    ft_atol(const char *str);
 void    error_exit(void);
 void    ft_putstr(char *str);
+
+
+void ft_hetler_sort(t_stack **stack_a,t_stack **stack_b);
+char	**ft_split(char const *s, char c);
+char	**free_all(char **res, int j);
+int     args_size(char **args);
+int	ft_isdigit(int c);
+int is_valid_values(char **args, int size);
+
+
+void    stack_init(t_stack **stack_a, char **args, int size);
+
+
 
 #endif
