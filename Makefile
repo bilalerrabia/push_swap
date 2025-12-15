@@ -1,24 +1,21 @@
 CC = cc
 CFLAGS = -Wall -Wextra -Werror
-SRCS = healpers.c lst_tools.c stack_tools.c main.c ft_split.c stack_init.c \
-		is_valid.c
-
-
 NAME = push_swap
-
-
+SRCS = main.c parsing.c more_helpers.c push_swap_tools.c push_swap_tools2.c hitler_sort.c \
+		ft_stalin_sort.c ft_stack_init.c ft_split.c ft_linked_list_tools.c ft_chunksort.c \
+		sort_small.c
 
 all: $(NAME)
 
-
-$(NAME):
-	$(CC) $(SRCS) $(CFLAGS) -o $(NAME)
-# 	@echo "build"
+$(NAME): $(SRCS)
+	$(CC) $(CFLAGS) $(SRCS) -o $(NAME)
 
 clean:
+	@echo "slak ajmi ma3ndi manmsa7"
+
+fclean:
 	rm -f $(NAME)
 
-fclean: clean
+re: fclean all
 
-re : fclean all
-.PHONY: all clean fclean re
+.PHONY: re all clean fclean

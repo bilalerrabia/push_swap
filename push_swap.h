@@ -1,67 +1,75 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   push_swap.h                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: berrabia <berrabia@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/12/07 08:45:17 by berrabia          #+#    #+#             */
+/*   Updated: 2025/12/15 04:01:14 by berrabia         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #ifndef PUSH_SWAP_H
-#define PUSH_SWAP_H
+# define PUSH_SWAP_H
 
-#include <unistd.h>
-#include <stdlib.h>
-#include <limits.h>
+# include <unistd.h>
+# include <stdlib.h>
+# include <limits.h>
 
+typedef struct s{
+	int			value;
+	int			index;
+	struct s	*next;
+	struct s	*pver;
+}	t_stack;
 
-typedef struct s_stack
-{
-    int             value;
-    int             index;
-    struct s_stack  *next;
-    struct s_stack  *prev;
-} t_stack;
+void		ft_stack_init(t_stack **a, char **args, int size);
 
+void		ft_calc_index(t_stack *a);
+void		ft_error(void);
 
-void    sort_final_rotation(t_stack **stack_a);
-void    sort_large(t_stack **stack_a, t_stack **stack_b);
-void    sort_three(t_stack **stack_a);
-int     is_sorted(t_stack *stack);
-void    sort_small(t_stack **stack_a, t_stack **stack_b, int size);
-void    assign_indices(t_stack *stack_a);
+long		ft_atol(char *arg);
 
+char		**ft_split(char const *s, char c);
+char		**free_all(char **res, int j);
+int			ft_args_size(char **args);
 
-t_stack *ft_lstnew(int value);
-t_stack *ft_lstlast(t_stack *head);
-int     ft_lstsize(t_stack *head);
-void    ft_lstadd_front(t_stack **stack, t_stack *new_node);
-void    ft_lstadd_back(t_stack **stack, t_stack *new_node);
+int			is_valids(char **args, int size);
+int			is_valid(char *arg);
+void		invalid_exit(int argc, char **args, int size);
 
+t_stack		*ft_lstnew(int value);
+void		ft_lstadd_back(t_stack **lst, t_stack *new);
+t_stack		*ft_lstlast(t_stack *a);
+void		ft_lstclear(t_stack **a);
+void		ft_lstadd_front(t_stack **a, t_stack *new);
 
-void sa(t_stack **a);
-void sb(t_stack **b);
-void pa(t_stack **a, t_stack **b);
-void pb(t_stack **a, t_stack **b);
-void ra(t_stack **a);
-void rb(t_stack **b);
-void rra(t_stack **a);
-void rrb(t_stack **b);
+void		free_stack(t_stack **a);
 
-void    free_stack(t_stack **stack);
-void    ft_swap(t_stack **stack);
-void    ft_push(t_stack **from, t_stack **to);
-void    ft_rotate(t_stack **stack);
-void    ft_reverse_rotate(t_stack **stack);
+void		ft_chunksort(t_stack **a, t_stack **b);
+void		push_back_greedy(t_stack **a, t_stack **b);
+void		ft_hitler_sort(t_stack **a, t_stack **b);
+void		ft_stalin_sort(t_stack **a, t_stack **b);
+int			ft_lstsize(t_stack *a);
 
+void		rb(t_stack **b);
+void		ra(t_stack **a);
+void		pb(t_stack **a, t_stack **b);
+void		pa(t_stack **a, t_stack **b);
+void		rr(t_stack **a, t_stack **b);
+void		sb(t_stack **b);
+void		sa(t_stack **a);
+void		ss(t_stack **a, t_stack **b);
+void		rra(t_stack **a);
+void		rrb(t_stack **b);
+void		rrr(t_stack **a, t_stack **b);
 
-
-long    ft_atol(const char *str);
-void    error_exit(void);
-void    ft_putstr(char *str);
-
-
-void ft_hetler_sort(t_stack **stack_a,t_stack **stack_b);
-char	**ft_split(char const *s, char c);
-char	**free_all(char **res, int j);
-int     args_size(char **args);
-int	ft_isdigit(int c);
-int is_valid_values(char **args, int size);
-
-
-void    stack_init(t_stack **stack_a, char **args, int size);
-
-
+int			is_sorted(t_stack *a, t_stack *b);
+void		sort_three(t_stack **a);
+int			find_min_pos(t_stack *stack);
+void		move_to_top(t_stack **stack, int pos, int size);
+void		sort_small(t_stack **a, t_stack **b);
+int			find_biggest(t_stack *a);
 
 #endif
