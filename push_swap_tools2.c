@@ -6,7 +6,7 @@
 /*   By: berrabia <berrabia@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/07 09:00:18 by berrabia          #+#    #+#             */
-/*   Updated: 2025/12/08 15:46:53 by berrabia         ###   ########.fr       */
+/*   Updated: 2025/12/16 11:47:02 by berrabia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,6 @@ void	sa(t_stack **a)
 	second->pver = NULL;
 	first->pver = second;
 	*a = second;
-	write(1, "sa\n", 3);
 }
 
 void	sb(t_stack **b)
@@ -47,13 +46,13 @@ void	sb(t_stack **b)
 	second->pver = NULL;
 	first->pver = second;
 	*b = second;
-	write(1, "sb\n", 3);
 }
 
 void	ss(t_stack **a, t_stack **b)
 {
 	sa(a);
 	sb(b);
+	write(1, "sa\nsb\n", 6);
 }
 
 void	rra(t_stack **a)
@@ -70,7 +69,6 @@ void	rra(t_stack **a)
 	last->next = *a;
 	(*a)->pver = last;
 	*a = last;
-	write(1, "rra\n", 4);
 }
 
 void	rrb(t_stack **b)
@@ -87,5 +85,4 @@ void	rrb(t_stack **b)
 	last->next = *b;
 	(*b)->pver = last;
 	*b = last;
-	write(1, "rrb\n", 4);
 }

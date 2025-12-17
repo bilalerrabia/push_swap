@@ -6,7 +6,7 @@
 /*   By: berrabia <berrabia@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/08 15:20:06 by berrabia          #+#    #+#             */
-/*   Updated: 2025/12/15 11:33:03 by berrabia         ###   ########.fr       */
+/*   Updated: 2025/12/16 13:26:32 by berrabia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,11 +23,15 @@ void	sort_small(t_stack **a, t_stack **b)
 		min_pos = find_min_pos(*a);
 		move_to_top(a, min_pos, size);
 		pb(a, b);
+		write(1, "pb\n", 3);
 		size--;
 	}
 	sort_three(a);
 	while (*b)
+	{
 		pa(a, b);
+		write(1, "pa\n", 3);
+	}
 }
 
 void	move_to_top(t_stack **stack, int pos, int size)
@@ -35,12 +39,18 @@ void	move_to_top(t_stack **stack, int pos, int size)
 	if (pos <= size / 2)
 	{
 		while (pos-- > 0)
+		{
 			ra(stack);
+			write(1, "ra\n", 3);
+		}
 	}
 	else
 	{
 		while (pos++ < size)
+		{
 			rra(stack);
+			write(1, "rra\n", 4);
+		}
 	}
 }
 

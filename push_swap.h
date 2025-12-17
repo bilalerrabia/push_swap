@@ -6,7 +6,7 @@
 /*   By: berrabia <berrabia@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/07 08:45:17 by berrabia          #+#    #+#             */
-/*   Updated: 2025/12/15 04:01:14 by berrabia         ###   ########.fr       */
+/*   Updated: 2025/12/16 17:29:01 by berrabia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,5 +71,22 @@ int			find_min_pos(t_stack *stack);
 void		move_to_top(t_stack **stack, int pos, int size);
 void		sort_small(t_stack **a, t_stack **b);
 int			find_biggest(t_stack *a);
+
+// bonus
+# define BUFFER_SIZE 5
+
+char		*get_next_line(int fd);
+char		*ft_strjoin(char *s1, char *s2);
+int			not_a_newline(char *s);
+char		*get_line(char *s);
+char		*get_rest(char *s);
+char		*main_loop(int fd, char *rest);
+void		ft_main_loop(t_stack **a, t_stack **b);
+void		tester(t_stack **a, t_stack **b);
+int			ft_strlen(char *s);
+void		ft_error_bonus(t_stack **a, t_stack **b, char *move);
+int			ft_strcmp(char *s1, char *s2);
+void		ft_main_loop_2(t_stack **a, t_stack **b, char *move);
+void		ft_main_loop(t_stack **a, t_stack **b);
 
 #endif

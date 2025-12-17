@@ -6,7 +6,7 @@
 /*   By: berrabia <berrabia@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/07 09:11:17 by berrabia          #+#    #+#             */
-/*   Updated: 2025/12/07 09:12:38 by berrabia         ###   ########.fr       */
+/*   Updated: 2025/12/16 11:46:30 by berrabia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,6 @@ void	pb(t_stack **a, t_stack **b)
 	to_mov->next = NULL;
 	to_mov->pver = NULL;
 	ft_lstadd_front(b, to_mov);
-	write(1, "pb\n", 3);
 }
 
 void	pa(t_stack **a, t_stack **b)
@@ -41,7 +40,6 @@ void	pa(t_stack **a, t_stack **b)
 	to_mov->next = NULL;
 	to_mov->pver = NULL;
 	ft_lstadd_front(a, to_mov);
-	write(1, "pa\n", 3);
 }
 
 void	rb(t_stack **b)
@@ -55,7 +53,6 @@ void	rb(t_stack **b)
 	first->next = NULL;
 	first->pver = NULL;
 	ft_lstadd_back(b, first);
-	write(1, "rb\n", 3);
 }
 
 void	ra(t_stack **a)
@@ -69,12 +66,11 @@ void	ra(t_stack **a)
 	first->next = NULL;
 	first->pver = NULL;
 	ft_lstadd_back(a, first);
-	write(1, "ra\n", 3);
 }
 
 void	rr(t_stack **a, t_stack **b)
 {
 	ra(a);
 	rb(b);
-	write(1, "rr\n", 3);
+	write(1, "ra\nrb\n", 6);
 }

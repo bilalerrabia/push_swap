@@ -1,41 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ihatenorm.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: berrabia <berrabia@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/12/06 13:37:19 by berrabia          #+#    #+#             */
-/*   Updated: 2025/12/16 17:15:00 by berrabia         ###   ########.fr       */
+/*   Created: 2025/12/16 14:49:42 by berrabia          #+#    #+#             */
+/*   Updated: 2025/12/16 17:17:04 by berrabia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	main(int argc, char **argv)
+int	ft_args_size(char **args)
 {
-	t_stack	*a;
-	t_stack	*b;
-	int		size;
-	char	**args;
+	int	i;
 
-	a = NULL;
-	b = NULL;
-	if (argc == 1 || argv[1][0] == '\0')
-		return (0);
-	if (argc == 2)
-		args = ft_split(argv[1], ' ');
-	else
-		args = &argv[1];
-	if (argc == 2)
-		size = ft_args_size(args);
-	else
-		size = argc - 1;
-	if (!is_valids(args, size))
-		invalid_exit(argc, args, size);
-	ft_stack_init(&a, args, size);
+	i = 0;
+	while (args[i])
+		i++;
+	return (i);
+}
+
+void	ft_error(void)
+{
+	write(2, "Error\n", 6);
+	exit(1);
+}
+
+void	free_stack(t_stack **a)
+{
+	ft_lstclear(a);
+}
+
+void	invalid_exit(int argc, char **args, int size)
+{
 	if (argc == 2)
 		free_all(args, size);
-	ft_hitler_sort(&a, &b);
-	free_stack(&a);
+	ft_error();
 }

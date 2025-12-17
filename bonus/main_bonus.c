@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   main_bonus.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: berrabia <berrabia@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/12/06 13:37:19 by berrabia          #+#    #+#             */
-/*   Updated: 2025/12/16 17:15:00 by berrabia         ###   ########.fr       */
+/*   Created: 2025/12/16 11:23:03 by berrabia          #+#    #+#             */
+/*   Updated: 2025/12/16 17:17:54 by berrabia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../push_swap.h"
 
 int	main(int argc, char **argv)
 {
@@ -36,6 +36,6 @@ int	main(int argc, char **argv)
 	ft_stack_init(&a, args, size);
 	if (argc == 2)
 		free_all(args, size);
-	ft_hitler_sort(&a, &b);
+	ft_main_loop(&a, &b);
 	free_stack(&a);
 }

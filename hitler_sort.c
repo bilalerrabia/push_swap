@@ -6,7 +6,7 @@
 /*   By: berrabia <berrabia@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/07 09:19:20 by berrabia          #+#    #+#             */
-/*   Updated: 2025/12/15 11:34:33 by berrabia         ###   ########.fr       */
+/*   Updated: 2025/12/16 08:53:36 by berrabia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 
 void	ft_hitler_sort(t_stack **a, t_stack **b)
 {
-	ft_calc_index(*a);
 	if (is_sorted(*a, *b))
 		return ;
+	ft_calc_index(*a);
 	if (ft_lstsize(*a) <= 10)
 		ft_stalin_sort(a, b);
 	else
