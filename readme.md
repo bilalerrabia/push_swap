@@ -90,14 +90,6 @@ Artificial Intelligence tools were used to help improve the quality of the docum
 
 ## Example
 
-```bash
-ARG="4 67 3 87 23"; ./push_swap $ARG | wc -l
-```
-
-
-
----
-
 ## Author
 
 - **berrabia (ana hh)**
