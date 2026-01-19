@@ -94,7 +94,7 @@ Artificial Intelligence tools were used to help improve the quality of the docum
 ARG="4 67 3 87 23"; ./push_swap $ARG | wc -l
 ```
 
-This command outputs the number of operations generated for the given input.
+
 
 ---
 
