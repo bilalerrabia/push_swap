@@ -86,10 +86,6 @@ After parsing and validating the input, the program initializes stack A as a lin
 
 Artificial Intelligence tools were used to help improve the quality of the documentation, and assist in debugging and reasoning about the sorting logic. All code was written and implemented by ana(kdob 7ram ana katb ghire chi 70% hh).
 
----
-
-## Example
-
 ## Author
 
 - **berrabia (ana hh)**
